@@ -10,7 +10,7 @@ minimup =int(input())
 print("What maximum price you want= ")
 maximu=int(input())
 rep=100
-total_numeber_of_combos_found=0
+total_number_of_combos_found=0
 print("--------------------------------------------------------------------------------------")
 for i in range(rep):
   combo_size= ran.randint(2,len(stocklist)-1)
@@ -23,17 +23,17 @@ for i in range(rep):
     combo_price.append(stocklist[price])
     combo_total= sum(combo_price)
   if combo_total>minimup and combo_total<maximu:
-      total_numeber_of_combos_found+=1
+      total_number_of_combos_found+=1
       print(f"👍{combo_list} combo satisfy the condition👍 with the Total price of {combo_price}={combo_total}🤑💵")
       print(" ")
       print('_*_*_*_*_*_*_*_*_*__**_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*__***_*_*_*_*_*_*_*_*_*_*_*__*_*_*__*_*_*_*_*')
       print(" ")
   else:
-      print("No Best Rsult in Found😣")
+      print("No Best Result in Found😣")
       print(" ")
       print("--------------------------------------------------------------------------------------")
 print("--------------------------------------------------------------------------------------")
-print('TOTAL NUMBER OF COMBOS FOUND=',total_numeber_of_combos_found)  
+print('TOTAL NUMBER OF COMBOS FOUND=',total_number_of_combos_found)  
 
 
 
