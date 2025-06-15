@@ -1,8 +1,9 @@
 import random as ran
 
-productlist={'p1':10, 'p2':15, 'p3':20, 'p4':25, 'p5':30, 'p6':35, 'p7':50,
-               'p8':40, 'p9':55, 'p10':60, 'p11':65, 'p12':75, 'p13':70,
-               'p14':45}
+stocklist = {
+    'TCS': 380, 'INFY': 145, 'HDFCBANK': 1700, 'RELIANCE': 950, 'ITC': 450,
+    'SBIN': 850, 'ICICIBANK': 1100, 'HCLTECH': 600, 'TATAMOTORS': 980,
+    'LT': 3200, 'KOTAKBANK': 750, 'AXISBANK': 1100, 'BAJFINANCE': 7200, 'MARUTI': 12000}
 
 print("What manimum price you want= ")
 minimup =int(input())
@@ -12,20 +13,27 @@ rep=100
 total_numeber_of_combos_found=0
 print("--------------------------------------------------------------------------------------")
 for i in range(rep):
-  combo_size= ran.randint(2,len(productlist)-1)
+  combo_size= ran.randint(2,len(stocklist)-1)
   print("Combo size-- ",combo_size)
 
-  combo_list=ran.sample(list(productlist),combo_size)
+  combo_list=ran.sample(list(stocklist),combo_size)
   print("List of Combo products id:- ",combo_list)
   combo_price=[]
   for price in combo_list:
-    combo_price.append(productlist[price])
+    combo_price.append(stocklist[price])
     combo_total= sum(combo_price)
   if combo_total>minimup and combo_total<maximu:
-      total_numeber_of_combos+=1
+      total_numeber_of_combos_found+=1
       print(f"👍{combo_list} combo satisfy the condition👍 with the Total price of {combo_price}={combo_total}🤑💵")
+      print(" ")
+      print('_*_*_*_*_*_*_*_*_*__**_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*__***_*_*_*_*_*_*_*_*_*_*_*__*_*_*__*_*_*_*_*')
+      print(" ")
   else:
       print("No Best Rsult in Found😣")
+      print(" ")
       print("--------------------------------------------------------------------------------------")
 print("--------------------------------------------------------------------------------------")
 print('TOTAL NUMBER OF COMBOS FOUND=',total_numeber_of_combos_found)  
+
+
+
